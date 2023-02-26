@@ -1,4 +1,4 @@
-# Branch Lessons_C_SH
+# Course_c_sharp
 Знакомство с языком программирования.
 ___
 ## Lesson_1 
