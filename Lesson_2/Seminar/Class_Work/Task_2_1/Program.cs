@@ -6,7 +6,9 @@ int Task2Num (int num)
 {
     Console.WriteLine(num);
     int a = num % 10;
+    Console.WriteLine(a);
     int b =  num / 10;
+    Console.WriteLine(b);
     if (a > b) return a;
     else return b;
 }
