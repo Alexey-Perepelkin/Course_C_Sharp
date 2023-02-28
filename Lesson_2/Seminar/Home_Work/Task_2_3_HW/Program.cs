@@ -1,19 +1,25 @@
 ﻿// Задача 3: Напишите программу, которая выводит третью
 // цифру заданного числа или сообщает, что третьей цифры
 // нет.
-Console.WriteLine("Введите число");
-int a = int.Parse(Console.ReadLine()!);
 
-if (a<100) Console.WriteLine("Число не имеет третий разряд");
-else
-    {  
-    while ( a>1000 )
-        {
-            a = a / 10;
-            Console.WriteLine("---------");
-            Console.WriteLine(a);
-            
+int NumberThirdDigit (int number)
+{
+    int tmp ;
+    if (number < 100) tmp = -1;
+    else
+        {  
+        while ( number>1000 )number = number / 10;
+        tmp = number % 10;
         }
-    Console.WriteLine("** Результат **");    
-    Console.WriteLine(a % 10);
+    return tmp;
+}
+ //***************************************************   
+Console.WriteLine("Введите число");
+int num = int.Parse(Console.ReadLine()!);
+Console.WriteLine("---------------");
+int temp = NumberThirdDigit (num);
+if (temp == -1) Console.WriteLine("Число не содержит третий разряд");
+else 
+    {
+        Console.WriteLine("В третьем разряде число  " + temp); 
     }
