@@ -49,20 +49,17 @@ int Sum (int a, int d)
 }
 
 
+Console.WriteLine("Введите дату в формате (DD.MM.YYYY)");
+string TextData= Console.ReadLine()!;
 
-Console.WriteLine("Введите число (DD)");
-int InDay = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите месяц (MM)");
-int InMonth = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Введите год (YYYY)");
-int InYear = int.Parse(Console.ReadLine()!);
+string[] Sp = TextData.Split('.');
 string[] DaysWeek = {"ПН","ВТ","СР","ЧТ","ПТ","СБ","ВС"};
 
-if (CountDays(InYear,InMonth,InDay) == -1) Console.WriteLine("Такого числа нет в этом месяце");
+if (CountDays(int.Parse(Sp[2]),int.Parse(Sp[1]),int.Parse(Sp[0])) == -1) Console.WriteLine("Такого числа нет в этом месяце");
 else
 {
-    int Day = FirstDayYear(InYear);
-    int DayEnd = CountDays(InYear,InMonth,InDay) % 7;
+    int Day = FirstDayYear(int.Parse(Sp[2]));
+    int DayEnd = CountDays(int.Parse(Sp[2]),int.Parse(Sp[1]),int.Parse(Sp[0])) % 7;
     int index = Sum (Day,DayEnd)-1;
     Console.WriteLine (DaysWeek[index]);
     if (index == 5 | index == 6) Console.WriteLine("Выходной день");
