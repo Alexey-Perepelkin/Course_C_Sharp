@@ -1,16 +1,15 @@
-﻿// Задача 1. Напишите программу, которая принимает
-// на вход число (А) и выдаёт сумму чисел от 1 до А.
+﻿// Задача 1: Напишите программу, которая принимает
+// на вход число и выдаёт количество цифр в числе.
 
-int  Sum(int num)
-{
-    int result=0;
-    for (int i=1;i<=num;i++)
+int Count(int num)
+{   int i=0;
+    for ( i = 0; num > 0; i++)
     {
-        result =result+i;
+        num = num / 10;
     }
-    return result;
+    return i;
 }
-Console.Write("Input number:");
-int num=int.Parse(Console.ReadLine ()!);
-int Result =Sum(num);
-Console.WriteLine(Result);
+Console.Write("Input number: ");
+int Number = int.Parse(Console.ReadLine()!);
+int CountNum = Count(Number);
+Console.WriteLine(CountNum);
