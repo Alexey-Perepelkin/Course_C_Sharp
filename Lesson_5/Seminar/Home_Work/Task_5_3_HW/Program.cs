@@ -16,12 +16,13 @@ double[] MassNums(int size, int from, int to)
     double[] arr = new double[size];
 
     for (int i = 0; i < size; i++)
-        arr[i] = Math.Round( new Random().NextDouble() * (to-from)+from,2);
+        arr[i] = Math.Round(new Random().NextDouble() * (to - from) + from, 2);
     return arr;
 }
 
 void SumPosNeg(double[] arr)
 {
+    double difference = 0;
     double min = arr[0];
     double max = arr[0];
     string result = string.Empty;
@@ -32,6 +33,8 @@ void SumPosNeg(double[] arr)
     }
     result = $"min number = {min} ---- max number = {max}";
     Console.WriteLine(result);
+    difference = max - min;
+    Console.WriteLine($"Difference = {Math.Round(difference, 2)}");
 }
 Console.WriteLine("Input size array: ");
 int num = int.Parse(Console.ReadLine()!);
