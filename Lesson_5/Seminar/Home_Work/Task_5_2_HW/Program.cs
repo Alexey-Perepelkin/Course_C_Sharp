@@ -1,11 +1,13 @@
-﻿
+﻿// Задача 2: Задайте одномерный массив, заполненный
+// случайными числами. Найдите сумму элементов, стоящих
+// на нечётных позициях.
 
 void Print(int[] arr)
 {
     int size = arr.Length;
-
+    Console.Write($"Array: ");
     for (int i = 0; i < size; i++)
-        Console.Write($"Array: {arr[i]} ");
+        Console.Write($"{arr[i]} ");
     Console.WriteLine();
 }
 
@@ -20,22 +22,19 @@ int[] MassNums(int size, int from, int to)
 
 void SumPosNeg(int[] arr)
 {
-    int pos, neg;
-    pos = neg = 0;
-    for (int i = 0; i < arr.Length; i++)
+    int result = 0;
+    for (int i = 1; i < arr.Length+1 ; i++)
     {
-        if (arr[i] > 0)
-            pos += arr[i];
-        else
-            neg += arr[i];
+        if (i % 2 == 1)
+            result = result + arr[i-1];
     }
-    Console.WriteLine($"Positive: {pos}, negative: {neg}");
+    Console.WriteLine($"Sum of numbers at odd array position: Sum = {result}");
 }
-Console.WriteLine("Input size massive:");
+Console.WriteLine("Input size array: ");
 int num = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Input the lover bound array:");
+Console.WriteLine("Input the lover bound random: ");
 int start = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Input the upper bound array:");
+Console.WriteLine("Input the upper bound random: ");
 int stop = int.Parse(Console.ReadLine()!);
 
 int[] mass = MassNums(num, start, stop);
