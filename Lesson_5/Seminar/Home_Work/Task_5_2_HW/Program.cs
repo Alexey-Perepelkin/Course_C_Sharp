@@ -23,10 +23,10 @@ int[] MassNums(int size, int from, int to)
 void SumPosNeg(int[] arr)
 {
     int result = 0;
-    for (int i = 1; i < arr.Length+1 ; i++)
+    for (int i = 1; i < arr.Length + 1; i++)
     {
         if (i % 2 == 1)
-            result = result + arr[i-1];
+            result = result + arr[i - 1];
     }
     Console.WriteLine($"Sum of numbers at odd array position: Sum = {result}");
 }
