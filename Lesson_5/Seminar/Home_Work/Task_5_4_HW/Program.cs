@@ -70,9 +70,10 @@ else
                 (start, stop) = (stop, start);
             }
             int[] mass = MassNums(num, start, stop);
+            int[] NewMass=NewArr(mass);
             Print(mass);
             NewArr(mass);
-            Print(NewArr(mass));
+            Print(NewMass);
         }
     }
 }
