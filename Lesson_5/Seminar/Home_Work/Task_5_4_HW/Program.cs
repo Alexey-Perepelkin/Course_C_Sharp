@@ -20,7 +20,7 @@ int[] MassNums(int size, int from, int to)
     return arr;
 }
 
-int [] NewArr(int[] arr)
+int[] NewArr(int[] arr)
 {
     int size = arr.Length;
     int newSize = size / 2 + size % 2;
@@ -30,20 +30,52 @@ int [] NewArr(int[] arr)
     {
         newArr[i] = arr[i] * arr[size - 1 - i];
     }
-    if (size%2==1) newArr[newSize-1]=arr[newSize-1];
-    return newArr; 
-    
+    if (size % 2 == 1) newArr[newSize - 1] = arr[newSize - 1];
+    return newArr;
+
 }
 
-Console.WriteLine("Input size array: ");
-int num = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Input the lover bound random: ");
-int start = int.Parse(Console.ReadLine()!);
-Console.WriteLine("Input the upper bound random: ");
-int stop = int.Parse(Console.ReadLine()!);
 
-int[] mass = MassNums(num, start, stop);
-Print(mass);
-NewArr(mass);
-// Console.WriteLine(NewArr(mass));
-Print(NewArr(mass));
+int num = 0;
+int start = 0;
+int stop = 0;
+
+Console.WriteLine("Input size array: ");
+string InSize = Console.ReadLine()!;
+bool resiltInSize = int.TryParse(InSize, out num);
+
+if (!resiltInSize) Console.WriteLine("Not correct size array!");
+
+else
+{
+    Console.WriteLine("Input the lover bound random: ");
+    string LBoundRand = Console.ReadLine()!;
+    bool resultInLbound = int.TryParse(LBoundRand, out start);
+    if (!resultInLbound) Console.WriteLine("Not correct lover bound random!");
+
+    else
+    {
+        Console.WriteLine("Input the upper bound random: ");
+        string UBoundRand = Console.ReadLine()!;
+        bool resultInUbound = int.TryParse(UBoundRand, out stop);
+
+        if (!resultInUbound) Console.WriteLine("Not correct upper bound random!");
+
+        else
+        {
+            if (start > stop)
+            {
+                Console.WriteLine("WARNING! Lover bound random less than" +
+                " upper bound random. Values will be changed.");
+                (start, stop) = (stop, start);
+            }
+            int[] mass = MassNums(num, start, stop);
+            Print(mass);
+            NewArr(mass);
+            Print(NewArr(mass));
+        }
+    }
+}
+
+
+
