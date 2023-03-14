@@ -36,47 +36,99 @@ int[] NewArr(int[] arr)
 }
 
 
-int num ;
-int start ;
-int stop ;
+// int num ;
+// int start ;
+// int stop ;
 
-Console.WriteLine("Input size array: ");
-string InSize = Console.ReadLine()!;
-bool resiltInSize = int.TryParse(InSize, out num);
+// Console.WriteLine("Input size array: ");
+// string InSize = Console.ReadLine()!;
+// bool resiltInSize = int.TryParse(InSize, out num);
 
-if (!resiltInSize) Console.WriteLine("Not correct size array!");
+// if (!resiltInSize) Console.WriteLine("Not correct size array!");
 
-else
-{
+// else
+// {
+//     Console.WriteLine("Input the lover bound random: ");
+//     string LBoundRand = Console.ReadLine()!;
+//     bool resultInLBound = int.TryParse(LBoundRand, out start);
+//     if (!resultInLBound) Console.WriteLine("Not correct lover bound random!");
+
+//     else
+//     {
+//         Console.WriteLine("Input the upper bound random: ");
+//         string UBoundRand = Console.ReadLine()!;
+//         bool resultInUBound = int.TryParse(UBoundRand, out stop);
+
+//         if (!resultInUBound) Console.WriteLine("Not correct upper bound random!");
+
+//         else
+//         {
+//             if (start > stop)
+//             {
+//                 Console.WriteLine("WARNING! Lover bound random more than" +
+//                 " upper bound random. Values will be changed.");
+//                 (start, stop) = (stop, start);
+//             }
+//             int[] mass = MassNums(num, start, stop);
+//             int[] NewMass=NewArr(mass);
+//             Print(mass);
+//             NewArr(mass);
+//             Print(NewMass);
+//         }
+//     }
+// }
+
+
+
+
+    int num;
+    int start;
+    int stop;
+
+    Console.WriteLine("Input size array: ");
+    string InSize = Console.ReadLine()!;
+    bool resiltInSize = int.TryParse(InSize, out num);
+
+    if (!resiltInSize)
+    {
+        Console.WriteLine("Not correct size array!");
+        return;
+    }
+
     Console.WriteLine("Input the lover bound random: ");
     string LBoundRand = Console.ReadLine()!;
     bool resultInLBound = int.TryParse(LBoundRand, out start);
-    if (!resultInLBound) Console.WriteLine("Not correct lover bound random!");
 
-    else
+    if (!resultInLBound)
     {
-        Console.WriteLine("Input the upper bound random: ");
-        string UBoundRand = Console.ReadLine()!;
-        bool resultInUBound = int.TryParse(UBoundRand, out stop);
-
-        if (!resultInUBound) Console.WriteLine("Not correct upper bound random!");
-
-        else
-        {
-            if (start > stop)
-            {
-                Console.WriteLine("WARNING! Lover bound random more than" +
-                " upper bound random. Values will be changed.");
-                (start, stop) = (stop, start);
-            }
-            int[] mass = MassNums(num, start, stop);
-            int[] NewMass=NewArr(mass);
-            Print(mass);
-            NewArr(mass);
-            Print(NewMass);
-        }
+        Console.WriteLine("Not correct lover bound random!");
+        return;
     }
-}
+
+    Console.WriteLine("Input the upper bound random: ");
+    string UBoundRand = Console.ReadLine()!;
+    bool resultInUBound = int.TryParse(UBoundRand, out stop);
+
+    if (!resultInUBound)
+    {
+        Console.WriteLine("Not correct upper bound random!");
+        return;
+    }
+
+    if (start > stop)
+    {
+        Console.WriteLine("WARNING! Lover bound random more than" +
+        " upper bound random. Values will be changed.");
+        (start, stop) = (stop, start);
+    }
+    int[] mass = MassNums(num, start, stop);
+    int[] NewMass = NewArr(mass);
+    Print(mass);
+    NewArr(mass);
+    Print(NewMass);
+
+
+
 
 
 
