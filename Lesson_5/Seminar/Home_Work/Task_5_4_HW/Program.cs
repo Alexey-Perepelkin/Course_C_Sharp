@@ -36,9 +36,9 @@ int[] NewArr(int[] arr)
 }
 
 
-int num = 0;
-int start = 0;
-int stop = 0;
+int num ;
+int start ;
+int stop ;
 
 Console.WriteLine("Input size array: ");
 string InSize = Console.ReadLine()!;
@@ -50,16 +50,16 @@ else
 {
     Console.WriteLine("Input the lover bound random: ");
     string LBoundRand = Console.ReadLine()!;
-    bool resultInLbound = int.TryParse(LBoundRand, out start);
-    if (!resultInLbound) Console.WriteLine("Not correct lover bound random!");
+    bool resultInLBound = int.TryParse(LBoundRand, out start);
+    if (!resultInLBound) Console.WriteLine("Not correct lover bound random!");
 
     else
     {
         Console.WriteLine("Input the upper bound random: ");
         string UBoundRand = Console.ReadLine()!;
-        bool resultInUbound = int.TryParse(UBoundRand, out stop);
+        bool resultInUBound = int.TryParse(UBoundRand, out stop);
 
-        if (!resultInUbound) Console.WriteLine("Not correct upper bound random!");
+        if (!resultInUBound) Console.WriteLine("Not correct upper bound random!");
 
         else
         {
