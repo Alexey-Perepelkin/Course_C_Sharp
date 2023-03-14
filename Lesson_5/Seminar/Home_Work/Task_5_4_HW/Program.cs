@@ -65,7 +65,7 @@ else
         {
             if (start > stop)
             {
-                Console.WriteLine("WARNING! Lover bound random less than" +
+                Console.WriteLine("WARNING! Lover bound random more than" +
                 " upper bound random. Values will be changed.");
                 (start, stop) = (stop, start);
             }
